@@ -1,6 +1,6 @@
-# ui_components
+# clean_ui
 
-Uma biblioteca Flutter para construir interfaces de forma fácil e padronizada com componentes personalizáveis.
+Uma biblioteca Flutter para construir interfaces de forma fácil e padronizada com componentes personalizáveis e expansiveis.
 
 ## Descrição
 
@@ -19,4 +19,4 @@ Adicione a dependência no seu `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  ui_components: ^1.0.0
+  clean_ui: ^1.0.0

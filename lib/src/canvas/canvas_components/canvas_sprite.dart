@@ -56,13 +56,16 @@ class SpriteSheets {
       return _images[value]!;
     } else {
       final Completer<ui.Image> completer = Completer<ui.Image>();
-      final ImageStream stream =
-          AssetImage(value).resolve(ImageConfiguration());
+      final ImageStream stream = AssetImage(
+        value,
+      ).resolve(ImageConfiguration());
 
       stream.addListener(
-          ImageStreamListener((ImageInfo image, bool synchronousCall) {
-        completer.complete(image.image);
-      }));
+        ImageStreamListener((ImageInfo image, bool synchronousCall) {
+          _images[value] = image.image;
+          completer.complete(image.image);
+        }),
+      );
       return completer.future;
     }
   }

@@ -1,5 +1,5 @@
-name: ui_component
-description: Build user interfaces easily and consistently with customizable components.
+name: clean_ui
+description: Build user interfaces easily and consistently with extensible and customizable components.
 version: 1.0.0
 
 homepage: https://github.com/seu_usuario/ui_components
