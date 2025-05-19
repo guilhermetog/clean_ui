@@ -57,7 +57,7 @@ class UIText extends UIComponent with UIState, UIAnimated {
     TextStyle defaultStyle = TextStyle(
       decoration: decoration ?? TextDecoration.none,
       decorationColor: textColor,
-      color: textColor,
+      color: textColor ?? Colors.black,
       fontSize: fontSize,
       fontWeight: fontWeight,
       height: 1,
