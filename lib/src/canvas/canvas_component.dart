@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../ui_component.dart';
+import '../clean_ui.dart';
 import 'controls/canvas_mouse_control.dart';
 
 mixin UIBuffer {}
