@@ -3,7 +3,6 @@ description: Build user interfaces easily and consistently with extensible and c
 version: 1.0.1
 
 homepage: https://github.com/guilhermetog/clean_ui
-publish_to: https://pub.dev/publishers/saojosebits.com.br
 
 environment:
   sdk: ">=3.7.2 <4.0.0"
