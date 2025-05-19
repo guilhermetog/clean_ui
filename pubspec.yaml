@@ -1,6 +1,6 @@
 name: clean_ui
 description: Build user interfaces easily and consistently with extensible and customizable components.
-version: 1.0.0
+version: 1.0.1
 
 homepage: https://github.com/guilhermetog/clean_ui
 publish_to: https://pub.dev/publishers/saojosebits.com.br
