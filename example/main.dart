@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends UIComponent with UIState {
+  final UIcon icon = UIcon();
   final String title;
   int _counter = 0;
 
@@ -44,7 +45,7 @@ class MyHomePage extends UIComponent with UIState {
                 ..style = Theme.of(context).textTheme.headlineMedium,
             ],
       floatingActionButton:
-          UIcon()
+          icon
             ..padding = EdgeInsets.all(pHeight(10))
             ..color = Theme.of(context).colorScheme.primary
             ..onTap.then(_incrementCounter)

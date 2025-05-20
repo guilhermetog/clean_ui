@@ -27,11 +27,11 @@ abstract class UICore extends StatelessWidget {
     }
   }
 
-  Widget buildCore(BuildContext context);
+  Widget buildLayout(BuildContext context);
 
   @override
   Widget build(BuildContext context) {
-    return buildCore(context);
+    return buildLayout(context);
   }
 }
 
@@ -76,7 +76,7 @@ class UICoreStateful extends StatefulWidget {
   final UIState state;
 
   UICoreStateful(this._name, this.state)
-      : super(key: KeyManager.getKey(_name) ?? GlobalKey());
+    : super(key: KeyManager.getKey(_name) ?? GlobalKey());
 
   @override
   State<UICoreStateful> createState() => _UICoreStatefulState();
@@ -107,7 +107,7 @@ class _UICoreStatefulState extends State<UICoreStateful> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.state.buildCore(context);
+    return widget.state.buildLayout(context);
   }
 }
 

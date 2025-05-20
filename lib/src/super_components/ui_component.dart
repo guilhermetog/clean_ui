@@ -23,7 +23,6 @@ enum DisplayType {
   bool get expandsVertically => this == flexVertical || this == flex;
 }
 
-// ignore: must_be_immutable, use_key_in_widget_constructors
 class UIComponent extends UILayout {
   EdgeInsets? padding;
   EdgeInsets? margin;
@@ -64,7 +63,7 @@ class UIComponent extends UILayout {
   UIComponent([super.name]);
 
   @override
-  Widget buildUI(BuildContext context) {
+  Widget buildComponent(BuildContext context) {
     Widget? container;
     List<Widget>? children = buildChildren(context);
 
@@ -87,9 +86,10 @@ class UIComponent extends UILayout {
 
     if (clipBehavior != Clip.none) {
       container = ClipRRect(
-          clipBehavior: clipBehavior,
-          borderRadius: borderRadius ?? BorderRadius.zero,
-          child: container);
+        clipBehavior: clipBehavior,
+        borderRadius: borderRadius ?? BorderRadius.zero,
+        child: container,
+      );
     }
 
     if (color != null ||
@@ -99,29 +99,33 @@ class UIComponent extends UILayout {
         image != null ||
         gradient != null) {
       container = DecoratedBox(
-          decoration: BoxDecoration(
-            color: color,
-            border: border,
-            borderRadius: borderRadius,
-            boxShadow: boxShadow,
-            image: image,
-            gradient: gradient,
-          ),
-          child: container);
+        decoration: BoxDecoration(
+          color: color,
+          border: border,
+          borderRadius: borderRadius,
+          boxShadow: boxShadow,
+          image: image,
+          gradient: gradient,
+        ),
+        child: container,
+      );
     }
 
     if (blur != null) {
       container = BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: blur!.dx, sigmaY: blur!.dy),
-          child: container);
+        filter: ImageFilter.blur(sigmaX: blur!.dx, sigmaY: blur!.dy),
+        child: container,
+      );
     }
 
     if (scroll || overflow) {
       container = SingleChildScrollView(
-          scrollDirection: scrollDirection ??
-              (display == DisplayType.row ? Axis.horizontal : Axis.vertical),
-          physics: overflow ? const NeverScrollableScrollPhysics() : null,
-          child: container);
+        scrollDirection:
+            scrollDirection ??
+            (display == DisplayType.row ? Axis.horizontal : Axis.vertical),
+        physics: overflow ? const NeverScrollableScrollPhysics() : null,
+        child: container,
+      );
     }
 
     if (this is UIText) {
@@ -146,7 +150,10 @@ class UIComponent extends UILayout {
         );
       } else {
         container = SizedBox(
-            height: pHeight(100), width: pWidth(100), child: container);
+          height: pHeight(100),
+          width: pWidth(100),
+          child: container,
+        );
       }
     }
 

@@ -102,26 +102,28 @@ class UILayout extends UICore {
   }
 
   @override
-  Widget buildCore(BuildContext context) {
-    LayoutBuilder builder = LayoutBuilder(builder: (context, constraints) {
-      if (constraints.biggest.height == MediaQuery.of(context).size.height) {
-        _size = Size(
-          width ?? constraints.biggest.width,
-          height ??
-              constraints.biggest.height -
-                  MediaQuery.of(context).padding.top -
-                  MediaQuery.of(context).padding.bottom,
-        );
-      } else {
-        _size = Size(
-          width ?? constraints.biggest.width,
-          height ?? constraints.biggest.height,
-        );
-      }
+  Widget buildLayout(BuildContext context) {
+    LayoutBuilder builder = LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.biggest.height == MediaQuery.of(context).size.height) {
+          _size = Size(
+            width ?? constraints.biggest.width,
+            height ??
+                constraints.biggest.height -
+                    MediaQuery.of(context).padding.top -
+                    MediaQuery.of(context).padding.bottom,
+          );
+        } else {
+          _size = Size(
+            width ?? constraints.biggest.width,
+            height ?? constraints.biggest.height,
+          );
+        }
 
-      this.context = context;
-      return buildUI(context);
-    });
+        this.context = context;
+        return buildComponent(context);
+      },
+    );
 
     if (isPositioned) {
       return Positioned(
@@ -136,7 +138,7 @@ class UILayout extends UICore {
     }
   }
 
-  Widget buildUI(BuildContext context) {
+  Widget buildComponent(BuildContext context) {
     return const SizedBox.shrink();
   }
 }
@@ -150,17 +152,14 @@ mixin UIOverlay on UILayout {
   open(BuildContext context) {
     this.context = context;
     if (!_isMounted) {
-      _overlayEntry = OverlayEntry(builder: (context) {
-        return Material(
-          type: MaterialType.transparency,
-          child: Stack(
-            fit: StackFit.expand,
-            children: [
-              this,
-            ],
-          ),
-        );
-      });
+      _overlayEntry = OverlayEntry(
+        builder: (context) {
+          return Material(
+            type: MaterialType.transparency,
+            child: Stack(fit: StackFit.expand, children: [this]),
+          );
+        },
+      );
       Overlay.of(context).insert(_overlayEntry);
       _isMounted = true;
       onOpen();
