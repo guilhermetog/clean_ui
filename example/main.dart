@@ -1,4 +1,4 @@
-import 'package:clean_ui/src/clean_ui.dart';
+import 'package:clean_ui/clean_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() {

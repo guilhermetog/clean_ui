@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
-import '../clean_ui.dart';
+import '../../clean_ui.dart';
 
 enum ImageType { network, asset }
 
