@@ -1,7 +1,7 @@
 name: Feature Suggestion
 description: Suggest a new feature or improvement for the project
-title: "\[SUGGESTION\]: "
-labels: \[enhancement\]
+title: "[SUGGESTION]: "
+labels: [enhancement]
 # assignees: ''
 
 body:
