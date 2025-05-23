@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import '../ui_core/plug.dart';
-import '../ui_text.dart';
+import '../forms/ui_text.dart';
 import 'ui_layout.dart';
 
 enum DisplayType {
@@ -148,10 +148,22 @@ class UIComponent extends UILayout {
           ),
           child: container,
         );
-      } else {
+      } else if (pHeight(100).isValid) {
         container = SizedBox(
           height: pHeight(100),
+          width: display.expandsHorizontally ? null : pWidth(100),
+          child: container,
+        );
+      } else if (pWidth(100).isValid) {
+        container = SizedBox(
+          height: display.expandsVertically ? null : pHeight(100),
           width: pWidth(100),
+          child: container,
+        );
+      } else {
+        container = SizedBox(
+          height: double.infinity,
+          width: double.infinity,
           child: container,
         );
       }

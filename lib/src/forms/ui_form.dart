@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../layout/ui_column.dart';
-import '../ui_text.dart';
+import 'ui_text.dart';
 import 'ui_button.dart';
 import '../layout/ui_row.dart';
 import '../ui_core/plug.dart';

@@ -5,7 +5,7 @@ import '../layout/ui_column.dart';
 import '../layout/ui_row.dart';
 import '../ui_core/ui_core.dart';
 import '../ui_core/plug.dart';
-import '../ui_text.dart';
+import 'ui_text.dart';
 import '../super_components/ui_component.dart';
 
 class UInput extends UIComponent with UIState {
@@ -59,7 +59,7 @@ class UInput extends UIComponent with UIState {
                       ..height = pHeight(30)
                       ..text = label
                       ..margin = EdgeInsets.only(bottom: pHeight(5))
-                      ..textAlign = TextAlign.left
+                      ..alignment = Alignment.centerLeft
                       ..fontWeight = FontWeight.w700
                       ..fontSize = pHeight(25)
                       ..textColor = _color,

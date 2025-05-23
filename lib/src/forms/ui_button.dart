@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../images/ui_icon.dart';
 import '../layout/ui_row.dart';
 import '../ui_core/plug.dart';
-import '../ui_text.dart';
+import 'ui_text.dart';
 
 enum IconSide { left, right }
 

@@ -13,4 +13,4 @@ export 'src/forms/ui_date_picker.dart';
 export 'src/forms/ui_form.dart';
 export 'src/forms/ui_input.dart';
 export 'src/miscellaneous/date_picker.dart';
-export 'src/ui_text.dart';
+export 'src/forms/ui_text.dart';
