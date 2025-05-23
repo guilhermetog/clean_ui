@@ -1,0 +1,16 @@
+{
+    "autoAssign": true,
+    "defaultAssignees": [
+        "guilhermetog"
+    ],
+    "defaultLabels": [
+        "todo",
+        "prioridade: média"
+    ],
+    "duplicateDetection": true,
+    "exclude": [
+        "build/",
+        "test/"
+    ],
+    "caseSensitive": false
+}

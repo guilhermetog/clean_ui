@@ -1,6 +1,6 @@
 name: clean_ui
 description: Build user interfaces easily and consistently with extensible and customizable components.
-version: 1.0.5
+version: 1.0.6
 
 homepage: https://github.com/guilhermetog/clean_ui
 
@@ -15,6 +15,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  golden_toolkit: ^0.15.0
   lints: ^5.1.1
   test: ^1.24.0
 

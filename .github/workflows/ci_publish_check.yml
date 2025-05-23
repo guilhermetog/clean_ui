@@ -1,0 +1,32 @@
+name: CI Publish Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.6' # ou a versão que você usa
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test --no-pub
+
+      - name: Dry-run publish check
+        run: dart pub publish --dry-run
