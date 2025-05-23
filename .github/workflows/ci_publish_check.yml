@@ -14,10 +14,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.19.6' # ou a versão que você usa
+      - name: Setup Flutter 3.29.3 manually
+        run: |
+          git clone https://github.com/flutter/flutter.git --branch stable --depth 1
+          ./flutter/bin/flutter --version
+          echo "$PWD/flutter/bin" >> $GITHUB_PATH
+
+      - name: Pre-cache Flutter dependencies
+        run: flutter precache
 
       - name: Install dependencies
         run: flutter pub get
