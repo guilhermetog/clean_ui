@@ -1,0 +1,37 @@
+name: Bug Report
+description: Report a bug to help us improve
+title: "[BUG]: "
+labels: [bug]
+assignees: ''
+
+body:
+
+  - type: markdown
+    attributes:
+      value: "Thank you for reporting a bug! Please fill out the fields below:"
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: E.g., Python 3.11, Windows 10, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Steps for us to reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: false
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: false

@@ -1,3 +1,11 @@
+
+## \[unreleased\]
+
+### Added
+
+* Added templates for github issues
+
+
 ## \[1.0.6\] - 2025-05-22
 
 ### Added
