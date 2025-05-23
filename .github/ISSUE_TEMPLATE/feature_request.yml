@@ -5,51 +5,48 @@ labels: [enhancement]
 # assignees: ''
 
 body:
-
-* type: markdown
-  attributes:
-  value: |
-  Thank you for contributing a suggestion! Please fill in the information below as clearly as possible.
-* type: input
-  id: title
-  attributes:
-  label: Brief suggestion title
-  placeholder: Example: Add support for multiple languages
-  validations:
-  required: true
-* type: textarea
-  id: context
-  attributes:
-  label: Context
-  description: |
-  What is the current problem or need you are trying to solve?
-  Describe the scenario where this improvement would make sense.
-  validations:
-  required: true
-* type: textarea
-  id: proposal
-  attributes:
-  label: Suggestion description
-  description: Describe your improvement idea in detail.
-  validations:
-  required: true
-* type: textarea
-  id: benefits
-  attributes:
-  label: Expected benefits
-  description: What benefits would this improvement bring to users or the project?
-  validations:
-  required: false
-* type: dropdown
-  id: urgency
-  attributes:
-  label: Urgency level
-  options:
-  \- Low
-  \- Medium
-  \- High
-  default: 0
-  validations:
-  required: false
-
-
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing a suggestion! Please fill in the information below as clearly as possible.
+  - type: input
+    id: title
+    attributes:
+      label: Brief suggestion title
+      placeholder: Example: Add support for multiple languages
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: |
+        What is the current problem or need you are trying to solve?
+        Describe the scenario where this improvement would make sense.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggestion description
+      description: Describe your improvement idea in detail.
+    validations:
+      required: true
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Expected benefits
+      description: What benefits would this improvement bring to users or the project?
+    validations:
+      required: false
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency level
+      options:
+        - Low
+        - Medium
+        - High
+      default: 0
+    validations:
+      required: false
