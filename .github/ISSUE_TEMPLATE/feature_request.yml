@@ -13,7 +13,7 @@ body:
     id: title
     attributes:
       label: Brief suggestion title
-      placeholder: Example: Add support for multiple languages
+      placeholder: "Example: Add support for multiple languages"
     validations:
       required: true
   - type: textarea
